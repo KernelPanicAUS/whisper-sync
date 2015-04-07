@@ -100,7 +100,7 @@ log4j.main = {
     // Example of changing the log pattern for the default console appender:
     //
     //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+        console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
@@ -130,4 +130,12 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll']
 ]
+
+grails.plugin.springsecurity.rememberMe.persistent = false
+grails.plugin.springsecurity.rest.login.useJsonCredentials = true
+grails.plugin.springsecurity.rest.login.failureStatusCode = 401
+grails.plugin.springsecurity.rest.token.storage.useGorm = true
+grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com.khalilt.whispersync.AuthenticationToken'
+grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName = 'token'
+grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName = 'username'
 

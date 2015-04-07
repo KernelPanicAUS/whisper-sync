@@ -2,5 +2,7 @@ package whisper.sync.auth
 
 class LogoutController {
 
-    def index() {}
+    def index() {
+        render "LoggedOut!!!!"
+    }
 }
